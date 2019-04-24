@@ -1,0 +1,24 @@
+Feature: Given a Roman number as a string (eg "XX") determine its integer value (eg 20)
+
+# description of particular scenario Enter "MCMXC" to get 1990
+  Scenario Outline: Convert Roman number to arabic
+
+# Prerequisite before the test steps get executed.
+    Given Create object of ReverseRomanTask
+
+# Specific condition which should match in order to execute the next step.
+  When We put string as "<roman_number>"
+
+#"MCMXC"
+
+# What should happen if the condition mentioned in WHEN is satisfied.
+  Then We get the determined value as "<arabic_number>"
+
+Examples:
+      | roman_number | arabic_number |
+      | XCIX   | 99   |
+      | MMVIII | 2008 |
+      | XLVII  | 47   |
+      | MCMXC  |1990  |
+      | LXXX   |80    |
+
